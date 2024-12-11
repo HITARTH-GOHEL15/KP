@@ -1,7 +1,5 @@
 package com.example.plantdiseasedetector.navigation
 
-import android.view.animation.Animation
-import androidx.compose.animation.AnimatedContentScope
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
@@ -17,10 +15,10 @@ import com.example.plantdiseasedetector.presentation.Knowledge.KnowledgeArticleL
 import com.example.plantdiseasedetector.presentation.Knowledge.KnowledgeScreen
 import com.example.plantdiseasedetector.presentation.Knowledge.ReadingListScreen
 import com.example.plantdiseasedetector.presentation.Profile.ProfileScreen
-import com.example.plantdiseasedetector.presentation.ask_Hub.AskListBoxEditScreen
-import com.example.plantdiseasedetector.presentation.ask_Hub.AskListBoxScreen
-import com.example.plantdiseasedetector.presentation.ask_Hub.AskQuestionListItemScreen
-import com.example.plantdiseasedetector.presentation.ask_Hub.AskScreen
+import com.example.plantdiseasedetector.presentation.chat_Hub.AskListBoxEditScreen
+import com.example.plantdiseasedetector.presentation.chat_Hub.AskListBoxScreen
+import com.example.plantdiseasedetector.presentation.chat_Hub.AskQuestionListItemScreen
+import com.example.plantdiseasedetector.presentation.chat_Hub.AskScreen
 import com.example.plantdiseasedetector.presentation.authentication.SignInScreen
 import com.example.plantdiseasedetector.presentation.authentication.SignUpScreen
 import com.example.plantdiseasedetector.presentation.home.HomeScreen

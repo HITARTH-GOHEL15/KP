@@ -1,4 +1,4 @@
-package com.example.plantdiseasedetector.presentation.ask_Hub
+package com.example.plantdiseasedetector.presentation.chat_Hub
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background

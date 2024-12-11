@@ -54,7 +54,7 @@ import com.example.plantdiseasedetector.R
 import com.example.plantdiseasedetector.navigation.Screens
 import com.example.plantdiseasedetector.presentation.Knowledge.KnowledgeScreen
 import com.example.plantdiseasedetector.presentation.Profile.ProfileScreen
-import com.example.plantdiseasedetector.presentation.ask_Hub.AskScreen
+import com.example.plantdiseasedetector.presentation.chat_Hub.AskScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.ImageDiagnosisScreen
 import com.example.plantdiseasedetector.ui.theme.quicksand_bold
 import com.example.plantdiseasedetector.ui.theme.quicksand_light

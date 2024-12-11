@@ -110,7 +110,7 @@ fun ProfileScreen(
                 modifier = Modifier,
                 username = username,
                 onSignUpButtonClick = {
-                    navController.navigate(Screens.SignInScreenRoute.route)
+                    navController.navigate(Screens.SignUpScreenRoute.route)
                 }
             )
             Spacer(modifier = Modifier.padding(40.dp))

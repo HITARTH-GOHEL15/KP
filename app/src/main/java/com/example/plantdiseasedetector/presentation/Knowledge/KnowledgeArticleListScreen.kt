@@ -17,7 +17,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -40,11 +39,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.plantdiseasedetector.R
-import com.example.plantdiseasedetector.presentation.ask_Hub.AskListBoxScreen
 import com.example.plantdiseasedetector.domain.Articles
-import com.example.plantdiseasedetector.domain.AskQuestion
 import com.example.plantdiseasedetector.navigation.Screens
-import com.example.plantdiseasedetector.presentation.home.DropDownMenu
 import com.example.plantdiseasedetector.ui.theme.PlantDiseaseDetectorTheme
 import com.example.plantdiseasedetector.ui.theme.quicksand_bold
 import com.example.plantdiseasedetector.ui.theme.quicksand_medium
@@ -70,7 +66,7 @@ fun KnowledgeArticleListScreen(
                             shape = MaterialTheme.shapes.extraLarge,
                             placeholder = {
                                 Text(
-                                    text = "search",
+                                    text = "Search",
                                     fontFamily = quicksand_medium,
                                     fontWeight = FontWeight.SemiBold
                                 )

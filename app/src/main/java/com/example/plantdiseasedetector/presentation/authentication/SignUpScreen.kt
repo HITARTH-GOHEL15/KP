@@ -18,6 +18,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -36,6 +37,8 @@ import com.example.plantdiseasedetector.R
 import com.example.plantdiseasedetector.navigation.Screens
 import com.example.plantdiseasedetector.ui.theme.PlantDiseaseDetectorTheme
 import com.example.plantdiseasedetector.ui.theme.quicksand_bold
+import com.example.plantdiseasedetector.ui.theme.quicksand_light
+import com.example.plantdiseasedetector.ui.theme.quicksand_medium
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -46,7 +49,7 @@ fun SignUpScreen(navController: NavController) {
             TopAppBar(
                 title = {
                     Text(
-                        text = stringResource(R.string.welcome_back),
+                        text = stringResource(R.string.join_com),
                         fontFamily = quicksand_bold,
                         fontWeight = FontWeight.ExtraBold,
                         modifier = Modifier
@@ -73,107 +76,132 @@ fun SignUpScreen(navController: NavController) {
                 .fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
-            Column(
+            SignUpInfo(
+                onSignInClick = {
+                    navController.navigate(Screens.SignInScreenRoute.route)
+                },
+                onSendVerificationbuttonClick = {}
+            )
+        }
+    }
+}
+
+@Composable
+fun SignUpInfo(
+    onSendVerificationbuttonClick: () -> Unit,
+    onSignInClick : () -> Unit
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+    ) {
+        Column {
+            SignUpTextField(
+                text = stringResource(R.string.name_signIn_string),
+            )
+            Spacer(modifier = Modifier.padding(6.dp))
+            SignUpTextField(
+                text = stringResource(R.string.phone_signIn_string),
+            )
+            Spacer(modifier = Modifier.padding(4.dp))
+            Box(
                 modifier = Modifier
+                    .fillMaxWidth(),
+            ) {
+                Text(
+                    text = stringResource(R.string.sms_verification_note_signIn),
+                    fontFamily = quicksand_light,
+                    fontWeight = FontWeight.Light,
+                    fontSize = 12.sp,
+                    modifier = Modifier
+                        .padding(start = 26.dp)
+                )
+            }
+            Spacer(modifier = Modifier.padding(6.dp))
+            Button(
+                onClick = onSendVerificationbuttonClick,
+                colors = ButtonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onBackground,
+                    disabledContainerColor = MaterialTheme.colorScheme.primary,
+                    disabledContentColor = MaterialTheme.colorScheme.primary
+                ),
+                modifier = Modifier
+                    .padding(start = 24.dp , end = 24.dp)
                     .fillMaxWidth()
             ) {
+                Text(
+                    text = stringResource(R.string.signIn_button_string),
+                    fontFamily = quicksand_bold,
+                    fontWeight = FontWeight.Light,
+                    fontSize = 15.sp
+                )
+            }
+            Spacer(modifier = Modifier.padding(10.dp))
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = stringResource(R.string.already_account_for_signIn),
+                    fontFamily = quicksand_bold,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                contentAlignment = Alignment.Center
+            ) {
                 Button(
-                    onClick = {},
-                    shape = MaterialTheme.shapes.small,
-                    colors = ButtonColors(
-                        containerColor = Color.LightGray,
-                        contentColor = MaterialTheme.colorScheme.onBackground,
-                        disabledContainerColor = Color.LightGray,
-                        disabledContentColor =  Color.LightGray
-                    ),
-                    modifier = Modifier
-                        .padding(start = 24.dp , end = 24.dp)
-                        .fillMaxWidth()
-                ) {
-                    Row {
-                        Icon(
-                            painter = painterResource(R.drawable.google_svgrepo_com__1_),
-                            contentDescription = "Google_icon",
-                            tint = MaterialTheme.colorScheme.background,
-                            modifier = Modifier
-                                .size(24.dp)
-                        )
-                        Spacer(modifier = Modifier.padding(6.dp))
-                        Text(
-                            text = stringResource(R.string.google_signUp),
-                            fontFamily = quicksand_bold,
-                            color = MaterialTheme.colorScheme.background,
-                            fontWeight = FontWeight.ExtraBold,
-                            fontSize = 15.sp
-                        )
-                    }
-                }
-                Spacer(modifier = Modifier.padding(8.dp))
-                Button(
-                    onClick = {
-
-                    },
-                    shape = MaterialTheme.shapes.small,
-                    colors = ButtonColors(
-                        containerColor = MaterialTheme.colorScheme.primary,
-                        contentColor = MaterialTheme.colorScheme.onBackground,
-                        disabledContainerColor = MaterialTheme.colorScheme.primary,
-                        disabledContentColor = MaterialTheme.colorScheme.primary
-                    ),
-                    modifier = Modifier
-                        .padding(start = 24.dp , end = 24.dp)
-                        .fillMaxWidth()
-                ) {
-                    Row {
-                        Icon(
-                            painter = painterResource(R.drawable.smartphone_24dp_e8eaed_fill0_wght400_grad0_opsz24),
-                            contentDescription = "Google_icon"
-                        )
-                        Spacer(modifier = Modifier.padding(4.dp))
-                        Text(
-                            text = stringResource(R.string.phone_signUp),
-                            fontFamily = quicksand_bold,
-                            fontWeight = FontWeight.ExtraBold,
-                            fontSize = 15.sp
-                        )
-                    }
-                }
-                Spacer(modifier = Modifier.padding(10.dp))
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    contentAlignment = Alignment.Center
+                    onClick = onSignInClick,
+                    colors = ButtonDefaults.textButtonColors(
+                        containerColor = Color.Transparent
+                    )
                 ) {
                     Text(
-                        text = stringResource(R.string.signup_account_string),
+                        text = stringResource(R.string.signIn),
                         fontFamily = quicksand_bold,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.ExtraBold
                     )
-                }
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Button(
-                        onClick = {
-                            navController.navigate(Screens.SignInScreenRoute.route)
-                        },
-                        colors = ButtonDefaults.textButtonColors(
-                            containerColor = Color.Transparent
-                        )
-                    ) {
-                        Text(
-                            text = stringResource(R.string.signUp),
-                            fontFamily = quicksand_bold,
-                            fontWeight = FontWeight.ExtraBold
-                        )
-                    }
                 }
             }
         }
     }
 }
+
+@Composable
+fun SignUpTextField(
+    text: String,
+) {
+    OutlinedTextField(
+        value = "",
+        onValueChange = {},
+        shape = MaterialTheme.shapes.small,
+        label = {
+            Text(
+                text = text,
+                fontFamily = quicksand_medium,
+                fontWeight = FontWeight.SemiBold
+            )
+        },
+        placeholder = {
+            Row {
+                Text(
+                    text = text,
+                    fontFamily = quicksand_medium,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+        },
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 24.dp , end = 24.dp),
+        singleLine = true,
+    )
+}
+
 
 @Preview
 @Composable

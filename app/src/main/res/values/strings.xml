@@ -37,8 +37,8 @@
     <string name="signIn_button_string">Send verification code</string>
     <string name="signIn">sign in</string>
     <string name="welcome_back">Welcome back</string>
-    <string name="google_signUp">SIGN UP WITH GOOGLE</string>
-    <string name="phone_signUp">SIGN UP WITH PHONE NUMBER</string>
+    <string name="google_signUp">SIGN IN WITH GOOGLE</string>
+    <string name="phone_signUp">SIGN IN WITH PHONE NUMBER</string>
     <string name="signUp">sign up</string>
     <string name="signup_account_string">Do not have a account</string>
     <string name="feedback_string">How is your experience with our app?</string>
