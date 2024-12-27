@@ -85,14 +85,18 @@ fun KnowledgeScreen(
                             shape = MaterialTheme.shapes.extraLarge,
                             placeholder = {
                                 Text(
-                                    text = "search",
+                                    text = "Search...",
                                     fontFamily = quicksand_medium,
-                                    fontWeight = FontWeight.SemiBold
+                                )
+                            },
+                            leadingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.Search,
+                                    contentDescription = "search"
                                 )
                             },
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .height(50.dp)
                                 .padding(start = 6.dp),
                             singleLine = true,
                         )

@@ -2,6 +2,10 @@ package com.example.plantdiseasedetector.presentation.home
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.core.EaseIn
+import androidx.compose.animation.core.EaseOut
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
@@ -227,10 +231,10 @@ fun HomeScreen(
            label = "",
            transitionSpec = {
                when(this.targetState) {
-                   BottomNavigationScreens.ImaageDiagnosisScreenView -> slideInHorizontally(){-it}.togetherWith(slideOutHorizontally(){it})
-                   BottomNavigationScreens.AskScreenView -> slideInHorizontally(){-it}.togetherWith(slideOutHorizontally(){it})
-                   BottomNavigationScreens.KnowledgeView -> slideInHorizontally(){-it}.togetherWith(slideOutHorizontally(){it})
-                   BottomNavigationScreens.ProfileScreenView -> slideInHorizontally(){-it}.togetherWith(slideOutHorizontally(){it})
+                   BottomNavigationScreens.ImaageDiagnosisScreenView -> slideInHorizontally(){it}.togetherWith(slideOutHorizontally(){-it})
+                   BottomNavigationScreens.AskScreenView -> slideInHorizontally(){it}.togetherWith(slideOutHorizontally(){-it})
+                   BottomNavigationScreens.KnowledgeView -> slideInHorizontally(){it}.togetherWith(slideOutHorizontally(){-it})
+                   BottomNavigationScreens.ProfileScreenView -> slideInHorizontally(){it}.togetherWith(slideOutHorizontally(){-it})
                }
            },
            modifier = Modifier

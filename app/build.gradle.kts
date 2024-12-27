@@ -57,7 +57,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    //type safe - navigation
+    //navigation
     implementation(libs.androidx.navigation.compose)
+
+    //Lottie
+    implementation( libs.lottie.compose)
+
+    //pager
+    implementation (libs.accompanist.pager)
 
 }

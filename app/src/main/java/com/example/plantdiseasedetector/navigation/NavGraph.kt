@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
+import com.example.plantdiseasedetector.MainActivity
 import com.example.plantdiseasedetector.R
 import com.example.plantdiseasedetector.presentation.Knowledge.ArticleDetailScreen
 import com.example.plantdiseasedetector.presentation.Knowledge.KnowledgeArticleListScreen
@@ -25,13 +26,17 @@ import com.example.plantdiseasedetector.presentation.home.HomeScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.AiAssistantScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.DiagnosisReportScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.ImageDiagnosisScreen
+import com.example.plantdiseasedetector.presentation.onBoarding.OnboardingScreen
+import com.example.plantdiseasedetector.presentation.splash.SplashScreen
 
 @Composable
-fun Nav() {
+fun Nav(
+    context: MainActivity
+) {
     val navController = rememberNavController()
     NavHost(
         navController = navController ,
-        startDestination = Screens.HomeScreenRoute.route,
+        startDestination = Screens.SplashScreenRoute.route,
         enterTransition = {
             slideIntoContainer(
                 towards = AnimatedContentTransitionScope.SlideDirection.Start,
@@ -52,7 +57,25 @@ fun Nav() {
         }
     ) {
 
+        //splash
+        composable(
+            Screens.SplashScreenRoute.route
+        ) {
+            SplashScreen(
+                navController = navController,
+                context = context
+            )
+        }
 
+        //onboarding
+        composable(
+            Screens.OnboardingScreenRoute.route
+        ) {
+            OnboardingScreen(
+                navController = navController,
+                context = context
+            )
+        }
         // Home
         composable(
             Screens.HomeScreenRoute.route

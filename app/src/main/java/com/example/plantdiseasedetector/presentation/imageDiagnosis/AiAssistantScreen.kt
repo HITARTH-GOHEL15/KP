@@ -2,7 +2,6 @@ package com.example.plantdiseasedetector.presentation.imageDiagnosis
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -30,7 +28,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.plantdiseasedetector.R
-import com.example.plantdiseasedetector.presentation.Knowledge.DropDownMenuArticle
 import com.example.plantdiseasedetector.presentation.home.DropDownMenu
 import com.example.plantdiseasedetector.ui.theme.quicksand_bold
 import com.example.plantdiseasedetector.ui.theme.quicksand_medium
@@ -94,7 +91,6 @@ fun AiAssistantScreen(
                                 }
                         },
                         modifier = Modifier
-                            .height(50.dp)
                             .width(330.dp),
                     )
                     Spacer(modifier = Modifier.padding(4.dp))

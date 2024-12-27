@@ -15,7 +15,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PlantDiseaseDetectorTheme {
-               Nav()
+               Nav(
+                   context = this@MainActivity
+               )
             }
         }
     }

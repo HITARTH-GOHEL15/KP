@@ -1,6 +1,10 @@
 package com.example.plantdiseasedetector.navigation
 
 sealed class Screens(val route: String) {
+    //splash
+    data object SplashScreenRoute : Screens(route = "Splash")
+    //onboarding
+    data object OnboardingScreenRoute : Screens(route = "OnBoard")
     //home
     data object HomeScreenRoute : Screens(route = "home")
     //Auth
