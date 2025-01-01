@@ -1,12 +1,15 @@
 package com.example.plantdiseasedetector.presentation.authentication
 
 import android.annotation.SuppressLint
+import android.content.Context
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -23,6 +26,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -33,6 +40,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.LottieConstants
+import com.airbnb.lottie.compose.rememberLottieComposition
+import com.example.plantdiseasedetector.MainActivity
 import com.example.plantdiseasedetector.R
 import com.example.plantdiseasedetector.navigation.Screens
 import com.example.plantdiseasedetector.ui.theme.PlantDiseaseDetectorTheme
@@ -43,23 +55,33 @@ import com.example.plantdiseasedetector.ui.theme.quicksand_medium
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun SignUpScreen(navController: NavController) {
+fun SignUpScreen(
+    navController: NavController,
+    viewModel: SignUpViewModel,
+    context: MainActivity
+) {
+    var name by remember { mutableStateOf("") }
+    var phone by remember { mutableStateOf("") }
+    var isVerificationSent by remember { mutableStateOf("") }
+    var errorMessage  by remember { mutableStateOf("") }
+
+
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(
-                        text = stringResource(R.string.join_com),
-                        fontFamily = quicksand_bold,
-                        fontWeight = FontWeight.ExtraBold,
-                        modifier = Modifier
+                        Text(
+                            text = stringResource(R.string.join_com),
+                            fontFamily = quicksand_bold,
+                            fontWeight = FontWeight.ExtraBold,
+                            modifier = Modifier
 
-                    )
+                        )
                 },
                 navigationIcon = {
                     IconButton(
                         onClick = {
-                            navController.popBackStack()
+                            navController.navigate(Screens.LanguageSelectionScreenRoute.route)
                         }
                     ) {
                         Icon(
@@ -76,18 +98,73 @@ fun SignUpScreen(navController: NavController) {
                 .fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
-            SignUpInfo(
-                onSignInClick = {
-                    navController.navigate(Screens.SignInScreenRoute.route)
-                },
-                onSendVerificationbuttonClick = {}
-            )
+            Column {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(250.dp)
+                        .background(
+                            color = MaterialTheme.colorScheme.background,
+                            shape = MaterialTheme.shapes.medium
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
+                    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.animation_signin))
+                    LottieAnimation(
+                        composition = composition,
+                        iterations = LottieConstants.IterateForever,
+                        modifier = Modifier
+                            .background(color = MaterialTheme.colorScheme.background)
+                            .fillMaxWidth()
+                            .size(300.dp)
+                    )
+                }
+                SignUpInfo(
+                    name = name,
+                    phone = phone,
+                    onNameChange = {name = it},
+                    onPhoneChange = {phone = it},
+                    onSignInClick = {
+                        onSignUpIsFinished(context = context)
+                        navController.popBackStack()
+                        navController.navigate(Screens.SignInScreenRoute.route)
+                    },
+                    onSendVerificationbuttonClick = {
+                        if (name.isNotEmpty() && phone.isNotEmpty()) {
+                          viewModel.signUp(name  , phone) { success , message ->
+                              if(success) {
+                                  isVerificationSent = true.toString()
+                                  onSignUpIsFinished(context = context)
+                                  navController.popBackStack()
+                                  navController.navigate(Screens.VerificationCodeScreenRoute.route)
+                              } else {
+                                  errorMessage = message
+                              }
+                          }
+                        } else {
+                            errorMessage = "please enter valid details!"
+                        }
+                    }
+                )
+
+                if(errorMessage.isNotEmpty()) {
+                    Text(
+                        text = errorMessage,
+                        color = Color.Red,
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
+                }
+            }
         }
     }
 }
 
 @Composable
 fun SignUpInfo(
+    name: String,
+    phone: String,
+    onNameChange: (String) -> Unit,
+    onPhoneChange: (String) -> Unit,
     onSendVerificationbuttonClick: () -> Unit,
     onSignInClick : () -> Unit
 ) {
@@ -96,12 +173,56 @@ fun SignUpInfo(
             .fillMaxWidth()
     ) {
         Column {
-            SignUpTextField(
-                text = stringResource(R.string.name_signIn_string),
+            OutlinedTextField(
+                value = name,
+                onValueChange = onNameChange,
+                shape = MaterialTheme.shapes.small,
+                label = {
+                    Text(
+                        text = stringResource(R.string.name_signIn_string),
+                        fontFamily = quicksand_medium,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                },
+                placeholder = {
+                    Row {
+                        Text(
+                            text = stringResource(R.string.name_signIn_string),
+                            fontFamily = quicksand_medium,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 24.dp , end = 24.dp),
+                singleLine = true,
             )
             Spacer(modifier = Modifier.padding(6.dp))
-            SignUpTextField(
-                text = stringResource(R.string.phone_signIn_string),
+            OutlinedTextField(
+                value = phone,
+                onValueChange = onPhoneChange,
+                shape = MaterialTheme.shapes.small,
+                label = {
+                    Text(
+                        text = stringResource(R.string.phone_signIn_string),
+                        fontFamily = quicksand_medium,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                },
+                placeholder = {
+                    Row {
+                        Text(
+                            text = stringResource(R.string.phone_signIn_string),
+                            fontFamily = quicksand_medium,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 24.dp , end = 24.dp),
+                singleLine = true,
             )
             Spacer(modifier = Modifier.padding(4.dp))
             Box(
@@ -174,10 +295,12 @@ fun SignUpInfo(
 @Composable
 fun SignUpTextField(
     text: String,
+    value: String,
+    onValueChange: (String) -> Unit
 ) {
     OutlinedTextField(
-        value = "",
-        onValueChange = {},
+        value = value,
+        onValueChange = onValueChange,
         shape = MaterialTheme.shapes.small,
         label = {
             Text(
@@ -202,6 +325,12 @@ fun SignUpTextField(
     )
 }
 
+private fun onSignUpIsFinished(context: MainActivity) {
+    val sharedPreferences = context.getSharedPreferences("onBoarding" , Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+    editor.putBoolean("isFinished" , true)
+    editor.apply()
+}
 
 @Preview
 @Composable

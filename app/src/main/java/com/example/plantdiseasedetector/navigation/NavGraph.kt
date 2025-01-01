@@ -2,36 +2,48 @@ package com.example.plantdiseasedetector.navigation
 
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.background
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import com.example.plantdiseasedetector.MainActivity
 import com.example.plantdiseasedetector.R
-import com.example.plantdiseasedetector.presentation.Knowledge.ArticleDetailScreen
-import com.example.plantdiseasedetector.presentation.Knowledge.KnowledgeArticleListScreen
-import com.example.plantdiseasedetector.presentation.Knowledge.KnowledgeScreen
-import com.example.plantdiseasedetector.presentation.Knowledge.ReadingListScreen
+import com.example.plantdiseasedetector.data.DataSourceClimateInfo
+import com.example.plantdiseasedetector.data.DataSourcelanguage
+import com.example.plantdiseasedetector.data.network.UserRepository
 import com.example.plantdiseasedetector.presentation.Profile.ProfileScreen
-import com.example.plantdiseasedetector.presentation.chat_Hub.AskListBoxEditScreen
-import com.example.plantdiseasedetector.presentation.chat_Hub.AskListBoxScreen
-import com.example.plantdiseasedetector.presentation.chat_Hub.AskQuestionListItemScreen
-import com.example.plantdiseasedetector.presentation.chat_Hub.AskScreen
 import com.example.plantdiseasedetector.presentation.authentication.SignInScreen
 import com.example.plantdiseasedetector.presentation.authentication.SignUpScreen
+import com.example.plantdiseasedetector.presentation.authentication.SignUpViewModel
+import com.example.plantdiseasedetector.presentation.authentication.VerificationCodeScreen
+import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskListBoxEditScreen
+import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskListBoxScreen
+import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskQuestionListItemScreen
+import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskScreen
 import com.example.plantdiseasedetector.presentation.home.HomeScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.AiAssistantScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.DiagnosisReportScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.ImageDiagnosisScreen
+import com.example.plantdiseasedetector.presentation.imageDiagnosis.SubsidyDetailScreen
+import com.example.plantdiseasedetector.presentation.knowledge.CropWiseDetailScreen
+import com.example.plantdiseasedetector.presentation.knowledge.KnowledgeArticleListScreen
+import com.example.plantdiseasedetector.presentation.knowledge.KnowledgeCategoryListScreen
+import com.example.plantdiseasedetector.presentation.knowledge.KnowledgeScreen
+import com.example.plantdiseasedetector.presentation.knowledge.ReadingListScreen
+import com.example.plantdiseasedetector.presentation.onBoarding.LanguageselectionScreen
 import com.example.plantdiseasedetector.presentation.onBoarding.OnboardingScreen
 import com.example.plantdiseasedetector.presentation.splash.SplashScreen
 
 @Composable
 fun Nav(
-    context: MainActivity
+    context: MainActivity,
+    signUpViewModel: SignUpViewModel
 ) {
     val navController = rememberNavController()
     NavHost(
@@ -72,6 +84,16 @@ fun Nav(
             Screens.OnboardingScreenRoute.route
         ) {
             OnboardingScreen(
+                navController = navController,
+                context = context
+            )
+        }
+        //language - selection
+        composable(
+            Screens.LanguageSelectionScreenRoute.route
+        ) {
+            LanguageselectionScreen(
+                languages = DataSourcelanguage().loadLanguageInfo(),
                 navController = navController,
                 context = context
             )
@@ -120,14 +142,25 @@ fun Nav(
                 route = Screens.SignInScreenRoute.route
             ) {
                 SignInScreen(
-                    navController = navController
+                    navController = navController,
+                    context = context
                 )
             }
             composable(
                 route = Screens.SignUpScreenRoute.route,
                 ) {
                 SignUpScreen(
-                    navController = navController
+                    navController = navController,
+                    context = context,
+                    viewModel = signUpViewModel
+                )
+            }
+            composable(
+                route = Screens.VerificationCodeScreenRoute.route
+            ) {
+                VerificationCodeScreen(
+                    navController = navController,
+                    context = context
                 )
             }
         }
@@ -224,6 +257,12 @@ fun Nav(
                     navController = navController
                 )
             }
+            composable(route = Screens.KnowledgeCategoryListScreenRoute.route) {
+                KnowledgeCategoryListScreen(
+                    navController = navController,
+                    knowledgeOfflineInfo = DataSourceClimateInfo().loadClimateInfo()
+                )
+            }
             composable(route = Screens.KnowledgeArticleListScreenRoute.route) {
                 KnowledgeArticleListScreen(
                     navController = navController,
@@ -231,9 +270,10 @@ fun Nav(
                 )
             }
             composable(route = Screens.ArticleDetailScreenRoute.route) {
-                ArticleDetailScreen(
+                CropWiseDetailScreen(
                     navController = navController,
-                    article_name = "article_name"
+                    modifier = Modifier
+                        .background(color = MaterialTheme.colorScheme.secondary)
                 )
             }
             composable(route = Screens.ReadingListScreenRoute.route) {
@@ -280,6 +320,15 @@ fun Nav(
             }
             composable(Screens.AiAssistantScreenRoute.route) {
                 AiAssistantScreen(
+                    navController = navController
+                )
+            }
+            composable(Screens.SubsidyDetailScreenRoute.route) {
+                SubsidyDetailScreen(
+                    subTitle = "Sub_Title",
+                    subEligibility ="Sub_Eligibility",
+                    subStatus ="Sub_Status",
+                    subInfo ="Sub_Information",
                     navController = navController
                 )
             }

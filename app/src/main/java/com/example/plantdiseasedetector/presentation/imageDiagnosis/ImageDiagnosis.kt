@@ -40,13 +40,32 @@ fun ImageDiagnosisScreen(
     navController: NavController,
     modifier: Modifier
 ) {
-
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(top = 150.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+//        OutlinedTextField(
+//                value = "",
+//                onValueChange = {},
+//                shape = MaterialTheme.shapes.extraLarge,
+//                placeholder = {
+//                    Text(
+//                        text = "Direct Search",
+//                        fontFamily = quicksand_medium,
+//                    )
+//                },
+//                leadingIcon = {
+//                    Icon(
+//                        imageVector = Icons.Default.Search,
+//                        contentDescription = "search"
+//                    )
+//                },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .padding(start = 20.dp , end = 20.dp , bottom = 8.dp),
+//            )
         Text(
             text = stringResource(R.string.heal_Crop),
             fontFamily = quicksand_medium,
@@ -64,8 +83,28 @@ fun ImageDiagnosisScreen(
         )
         Spacer(modifier = Modifier.padding(8.dp))
         Instructions()
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(bottom = 160.dp , start = 12.dp , end = 12.dp),
+            contentAlignment = Alignment.BottomStart
+        ) {
+            Column {
+                Text(
+                    text = "Available Subsidies :",
+                    fontFamily = quicksand_bold,
+                    fontWeight = FontWeight.ExtraBold,
+                    modifier = Modifier.padding(start = 2.dp)
+                )
+                Spacer(modifier = Modifier.padding(4.dp))
+                SubsidyScreen(
+                    navController = navController
+                )
+            }
+        }
     }
 }
+
 
 @Composable
 fun CropBox(

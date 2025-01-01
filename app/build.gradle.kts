@@ -66,4 +66,8 @@ dependencies {
     //pager
     implementation (libs.accompanist.pager)
 
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
 }

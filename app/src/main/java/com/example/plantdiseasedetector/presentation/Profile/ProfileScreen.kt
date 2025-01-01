@@ -1,6 +1,8 @@
 package com.example.plantdiseasedetector.presentation.Profile
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -44,6 +46,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.modifier.modifierLocalProvider
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -70,6 +73,7 @@ fun ProfileScreen(
     navController: NavController,
     modifier: Modifier
 ) {
+    val context = LocalContext.current
     var showFeedbackDialog by remember {
         mutableStateOf(false)
     }
@@ -117,6 +121,12 @@ fun ProfileScreen(
             FeedBackBox(
                 onFeedBackButtonClick = {
                     showFeedbackDialog = true
+                }
+            )
+            Spacer(modifier = Modifier.padding(16.dp))
+            ShareBox(
+                onShareButtonClick = {
+                    shareApp(context = context)
                 }
             )
         }
@@ -251,6 +261,73 @@ fun FeedBackBox(
             }
         }
     }
+}
+
+@Composable
+fun ShareBox(
+    onShareButtonClick: () -> Unit
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(color = MaterialTheme.colorScheme.secondary , shape = MaterialTheme.shapes.medium)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 8.dp)
+        ) {
+            Icon(
+                painter = painterResource(R.drawable.reviews_24dp_e8eaed_fill0_wght400_grad0_opsz24),
+                contentDescription = "feedback_icon",
+                modifier = Modifier
+                    .padding(start = 6.dp , top = 9.dp)
+            )
+            Spacer(modifier = Modifier.padding(14.dp))
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+            ) {
+                FeedbackTextAndButton(
+                    text = "Grow together!",
+                    fontWeight = FontWeight.ExtraBold,
+                    modifier = Modifier
+                )
+                Spacer(modifier = Modifier.padding(3.dp))
+                FeedbackTextAndButton(
+                    text = "Share our app and help farmers solve their plant problems.",
+                    fontWeight = FontWeight.ExtraLight,
+                    modifier = Modifier
+                )
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    contentAlignment = Alignment.BottomEnd
+                ) {
+                    Button(
+                        onClick = onShareButtonClick,
+                        colors = ButtonDefaults.textButtonColors(
+                            containerColor = Color.Transparent
+                        )
+                    ) {
+                        Text(
+                            text = "Share App",
+                            fontFamily = quicksand_bold,
+                            fontWeight = FontWeight.ExtraBold
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+private fun shareApp(context: Context) {
+    val intent = Intent().apply {
+        action = Intent.ACTION_SEND
+        type = "apk"
+    }
+    context.startActivity(Intent.createChooser(intent , "Share App via"))
 }
 
 @Composable

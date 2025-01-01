@@ -192,7 +192,7 @@ fun ButtonSection(
                 onClick = {
                     onBoardingIsFinished(context = context)
                     navController.popBackStack()
-                    navController.navigate(Screens.HomeScreenRoute.route)
+                    navController.navigate(Screens.LanguageSelectionScreenRoute.route)
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -202,7 +202,7 @@ fun ButtonSection(
                 )
             ) {
                 Text(
-                    text = "Get Started",
+                    text = "Next",
                     fontSize = 22.sp,
                     fontFamily = quicksand_bold,
                     fontWeight = FontWeight.Light,

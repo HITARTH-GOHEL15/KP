@@ -1,6 +1,8 @@
 package com.example.plantdiseasedetector.presentation.authentication
 
 import android.annotation.SuppressLint
+import android.content.Context
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -12,8 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
@@ -21,20 +21,14 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -42,35 +36,44 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.LottieConstants
+import com.airbnb.lottie.compose.rememberLottieComposition
+import com.example.plantdiseasedetector.MainActivity
 import com.example.plantdiseasedetector.R
 import com.example.plantdiseasedetector.navigation.Screens
-import com.example.plantdiseasedetector.presentation.Knowledge.DropDownMenuArticle
-import com.example.plantdiseasedetector.presentation.Knowledge.SortingDropDownMenu
 import com.example.plantdiseasedetector.ui.theme.PlantDiseaseDetectorTheme
 import com.example.plantdiseasedetector.ui.theme.quicksand_bold
-import com.example.plantdiseasedetector.ui.theme.quicksand_light
-import com.example.plantdiseasedetector.ui.theme.quicksand_medium
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun SignInScreen(navController: NavController) {
+fun SignInScreen(
+    navController: NavController,
+    context: MainActivity
+) {
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(
-                        text = stringResource(R.string.welcome_back),
-                        fontFamily = quicksand_bold,
-                        fontWeight = FontWeight.ExtraBold,
+                    Row(
                         modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            text = stringResource(R.string.welcome_back),
+                            fontFamily = quicksand_bold,
+                            fontWeight = FontWeight.ExtraBold,
+                            modifier = Modifier
 
-                    )
+                        )
+                    }
                 },
                 navigationIcon = {
                     IconButton(
                         onClick = {
-                            navController.popBackStack()
+                            navController.navigate(Screens.LanguageSelectionScreenRoute.route)
                         }
                     ) {
                         Icon(
@@ -91,8 +94,33 @@ fun SignInScreen(navController: NavController) {
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(250.dp)
+                        .background(
+                            color = MaterialTheme.colorScheme.background,
+                            shape = MaterialTheme.shapes.medium
+                        ),
+                    contentAlignment = Alignment.Center
+                ) {
+                    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.animation_signup))
+                    LottieAnimation(
+                        composition = composition,
+                        iterations = LottieConstants.IterateForever,
+                        modifier = Modifier
+                            .background(color = MaterialTheme.colorScheme.background)
+                            .fillMaxWidth()
+                            .size(300.dp)
+                    )
+                }
+                Spacer(modifier = Modifier.padding(14.dp))
                 Button(
-                    onClick = {},
+                    onClick = {
+                        onSignInIsFinished(context = context)
+                        navController.popBackStack()
+                        navController.navigate(Screens.HomeScreenRoute.route)
+                    },
                     shape = MaterialTheme.shapes.small,
                     colors = ButtonColors(
                         containerColor = Color.LightGray,
@@ -125,7 +153,9 @@ fun SignInScreen(navController: NavController) {
                 Spacer(modifier = Modifier.padding(8.dp))
                 Button(
                     onClick = {
-
+                        onSignInIsFinished(context = context)
+                        navController.popBackStack()
+                        navController.navigate(Screens.HomeScreenRoute.route)
                     },
                     shape = MaterialTheme.shapes.small,
                     colors = ButtonColors(
@@ -187,6 +217,13 @@ fun SignInScreen(navController: NavController) {
             }
         }
     }
+}
+
+private fun onSignInIsFinished(context: MainActivity) {
+    val sharedPreferences = context.getSharedPreferences("onBoarding" , Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+    editor.putBoolean("isFinished" , true)
+    editor.apply()
 }
 
 @Preview

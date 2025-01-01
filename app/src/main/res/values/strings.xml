@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Plant Disease Detector</string>
     <string name="diagnose_crop">your crop</string>
-    <string name="chat_Hab">Chat Hub</string>
+    <string name="chat_Hab">Suggestion Hub</string>
     <string name="knowledge_Hub">Knowledge Hub</string>
     <string name="feedback">Give Feedback</string>
     <string name="settings">Settings</string>
@@ -11,15 +11,15 @@
     <string name="instruction_1">1. First Click On A Take A Crop Button And Take a picture Of A Your Selected Plant.</string>
     <string name="instruction_2">2. After Taking Picture Of Plant you Will Get Your Plant Diagnosis Report. </string>
     <string name="instruction_3">3. After Analysis Diagnosis Report Get Medicine.</string>
-    <string name="ask_question">Ask Question</string>
+    <string name="ask_question">New Post</string>
     <string name="add_image">Add image</string>
     <string name="button_send">send</string>
-    <string name="add_image_question">Your Question</string>
-    <string name="add_image_question_ph">Add a question</string>
-    <string name="add_image_description">Description Of A Question</string>
-    <string name="add_image_des_ph">Describe More About Question</string>
+    <string name="add_image_question">Your post title</string>
+    <string name="add_image_question_ph">Add a title of post</string>
+    <string name="add_image_description">Description Of A Post</string>
+    <string name="add_image_des_ph">Describe More About Post</string>
     <string name="bookMark">Reading List</string>
-    <string name="article_image">Article image :</string>
+    <string name="article_image">image :</string>
     <string name="article_desc">Article :</string>
     <string name="join_com">Join The Community</string>
     <string name="give_feedback">Give FeedBack</string>
@@ -43,4 +43,352 @@
     <string name="signup_account_string">Do not have a account</string>
     <string name="feedback_string">How is your experience with our app?</string>
     <string name="report_string">Please describe the issue you are experiencing with this content.</string>
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    <string name="gujarati">Gujarati</string>
+
+    //data-collection -> Offline Knowledge hub
+
+    <!-- Crop 1: Wheat -->
+    <string name="wheat_name">Wheat</string>
+    <string name="wheat_climate">Wheat thrives in cool temperate climates with a temperature range of 10°C to 20°C. It requires moderate rainfall (450–650 mm per year) and can tolerate a variety of conditions but grows best in areas with well-defined seasons.</string>
+    <string name="wheat_soil">Wheat grows best in well-drained, fertile loamy soils, with a slightly acidic to neutral pH between 6.0 and 7.0. The soil should have good organic content and be free of waterlogging.</string>
+    <string name="wheat_disease1">Rust (Puccinia spp.): This fungal disease causes orange or red pustules on leaves. It weakens the plant, reducing yields.</string>
+    <string name="wheat_disease1_prevention">Prevention includes using resistant wheat varieties, applying fungicides like triadimefon, rotating crops, and removing infected crop residues. Avoid planting in the same field for consecutive years to minimize the build-up of rust spores.</string>
+    <string name="wheat_disease2">Powdery Mildew (Blumeria graminis): This fungal disease causes white powdery spots on leaves, which can reduce photosynthesis and yield.</string>
+    <string name="wheat_disease2_prevention">To prevent powdery mildew, use resistant varieties, apply sulfur fungicides early in the growing season, and ensure good air circulation around the plants by spacing them properly.</string>
+
+    <!-- Crop 2: Rice -->
+    <string name="rice_name">Rice</string>
+    <string name="rice_climate">Rice thrives in hot, humid tropical to subtropical climates, with temperatures ranging from 25°C to 35°C. It requires high humidity and abundant water, with rainfall between 800–1500 mm per year.</string>
+    <string name="rice_soil">Rice grows best in clayey or silty soils that retain water. It needs a slightly acidic to neutral pH (5.5 to 7.5). The soil should have good water-holding capacity, and fields should be irrigated consistently.</string>
+    <string name="rice_disease1">Blast (Pyricularia oryzae): A fungal disease that causes lesions on leaves, stems, and grains, leading to reduced yield.</string>
+    <string name="rice_disease1_prevention">Use resistant rice varieties, apply tricyclazole fungicide, and avoid over-fertilizing. Practice crop rotation and remove infected plant debris after harvest to prevent reinfection.</string>
+    <string name="rice_disease2">Bacterial Leaf Blight (Xanthomonas oryzae): This bacterial disease causes yellowing of leaves and wilting.</string>
+    <string name="rice_disease2_prevention">To prevent bacterial leaf blight, use resistant varieties, plant disease-free seeds, practice crop rotation, and avoid excessive nitrogen fertilizer that promotes bacterial growth. Maintain proper water management.</string>
+
+    <!-- Crop 3: Maize -->
+    <string name="maize_name">Maize</string>
+    <string name="maize_climate">Maize grows best in warm subtropical to tropical climates with temperatures between 18°C and 30°C. It requires moderate rainfall (500–900 mm), but irrigation may be necessary in dry periods.</string>
+    <string name="maize_soil">Maize prefers fertile, well-drained loamy soils with a pH between 5.5 and 7.5. It benefits from soils rich in organic matter and good drainage.</string>
+    <string name="maize_disease1">Gray Leaf Spot (Cercospora zeae-maydis): This fungal disease causes grayish lesions on leaves, reducing photosynthesis and yield.</string>
+    <string name="maize_disease1_prevention">Apply fungicides like azoxystrobin and mancozeb at the first sign of symptoms. Practice crop rotation, use disease-free seeds, and destroy infected crop residues to prevent reinfection.</string>
+    <string name="maize_disease2">Downy Mildew (Sclerophthora rayii): A fungal disease that causes yellowing and wilting of leaves, reducing the plant\'s vitality.</string>
+    <string name="maize_disease2_prevention">To prevent downy mildew, use resistant maize varieties, apply fungicides like metalaxyl, and practice crop rotation. Remove infected plants and maintain proper soil drainage.</string>
+
+    <!-- Crop 4: Barley -->
+    <string name="barley_name">Barley</string>
+    <string name="barley_climate">Barley prefers cool temperate climates with a temperature range of 12°C to 20°C. It requires moderate rainfall (350–600 mm) and grows best in areas with well-defined seasons.</string>
+    <string name="barley_soil">Barley thrives in fertile, well-drained soils, preferably sandy loam or clay loam, with a pH between 6.0 and 7.5. The soil should have good fertility and moisture retention but should not be waterlogged.</string>
+    <string name="barley_disease1">Leaf Rust (Puccinia hordei): This fungal disease causes orange or red pustules on barley leaves.</string>
+    <string name="barley_disease1_prevention">Prevent leaf rust by using resistant barley varieties, applying fungicides like triadimefon or tebuconazole, and rotating crops to reduce pathogen buildup.</string>
+    <string name="barley_disease2">Net Blotch (Pyrenophora teres): A fungal disease that creates dark spots and streaks on leaves, reducing photosynthesis.</string>
+    <string name="barley_disease2_prevention">Use resistant varieties, apply fungicides like chlorothalonil, and practice crop rotation. Remove infected plant material from the field to reduce disease spread.</string>
+
+    <!-- Crop 5: Millet -->
+    <string name="millet_name">Millet</string>
+    <string name="millet_climate">Millet thrives in semi-arid and tropical climates, with a temperature range of 20°C to 30°C. It requires moderate rainfall (400–600 mm) and tolerates drought conditions better than many other crops.</string>
+    <string name="millet_soil">Millet grows well in light, well-drained soils, such as sandy loams and clay loams. It prefers slightly alkaline soils with a pH between 6.0 and 7.5.</string>
+    <string name="millet_disease1">Blast (Pyricularia grisea): A fungal disease causing lesions on leaves, stems, and panicles, leading to yield loss.</string>
+    <string name="millet_disease1_prevention">To prevent blast, use resistant millet varieties, apply fungicides like carbendazim, and practice crop rotation. Avoid high humidity levels and wet foliage during flowering.</string>
+    <string name="millet_disease2">Downy Mildew (Sclerospora graminicola): A fungal disease that causes yellowing and wilting of leaves.</string>
+    <string name="millet_disease2_prevention">Apply metalaxyl fungicides and use resistant varieties. Rotate crops, avoid excess nitrogen fertilization, and remove infected plant debris after harvest.</string>
+
+    <!-- Crop 6: Sorghum -->
+    <string name="sorghum_name">Sorghum</string>
+    <string name="sorghum_climate">Sorghum grows in hot, semi-arid climates with temperatures between 25°C and 35°C. It requires moderate rainfall (400–700 mm) and can withstand drought conditions better than many other crops.</string>
+    <string name="sorghum_soil">Sorghum prefers well-drained, fertile soils such as loamy and sandy loam, with a pH between 5.5 and 7.5. The soil should have good moisture retention while not being waterlogged.</string>
+    <string name="sorghum_disease1">Anthracnose (Colletotrichum sublineola): A fungal disease that causes dark lesions on leaves and stems, reducing yields.</string>
+    <string name="sorghum_disease1_prevention">To prevent anthracnose, use resistant varieties, apply fungicides like chlorothalonil, and rotate crops. Ensure proper field sanitation by removing infected plant debris.</string>
+    <string name="sorghum_disease2">Grain Mold (Fusarium spp.): A fungal disease that causes grain discoloration and mold growth.</string>
+    <string name="sorghum_disease2_prevention">Prevent grain mold by using resistant varieties, applying fungicides like tebuconazole, and maintaining proper field sanitation. Store grains in dry, well-ventilated conditions.</string>
+
+    <!-- Crop 7: Sunflower -->
+    <string name="sunflower_name">Sunflower</string>
+    <string name="sunflower_climate">Sunflowers grow best in warm climates with temperatures between 20°C and 30°C. They require full sunlight and moderate rainfall (400–800 mm per year), thriving in areas with well-defined seasons.</string>
+    <string name="sunflower_soil">Sunflowers prefer well-drained sandy loam or loamy soils with a pH range of 6.0 to 7.5. Soil should be nutrient-rich and provide good drainage to avoid waterlogging.</string>
+    <string name="sunflower_disease1">Downy Mildew (Plasmopara halstedii): A fungal disease causing yellow spots on leaves, leading to reduced photosynthesis and yield.</string>
+    <string name="sunflower_disease1_prevention">Prevent downy mildew by using resistant sunflower varieties, applying fungicides like metalaxyl, and practicing crop rotation. Remove infected plant debris from the field after harvest.</string>
+    <string name="sunflower_disease2">Sclerotinia (White Mold): A fungal disease that causes white fluffy growths on the stem and leaves, reducing seed quality.</string>
+    <string name="sunflower_disease2_prevention">To prevent Sclerotinia, apply fungicides like boscalid, rotate crops, and remove infected plants from the field. Maintain good airflow between plants to reduce humidity.</string>
+
+    <!-- Crop 8: Potato -->
+    <string name="potato_name">Potato</string>
+    <string name="potato_climate">Potatoes thrive in cool climates with temperatures between 15°C and 20°C. They require moderate rainfall (450–800 mm per year) and a frost-free growing season.</string>
+    <string name="potato_soil">Potatoes prefer well-drained, fertile sandy loam soils with a pH of 5.5 to 6.5. Soil should have high organic matter content to ensure proper tuber development.</string>
+    <string name="potato_disease1">Late Blight (Phytophthora infestans): A fungal disease that causes dark lesions on leaves and stems, leading to crop failure.</string>
+    <string name="potato_disease1_prevention">Prevent late blight by applying fungicides such as copper-based products, ensuring proper spacing for airflow, and removing infected leaves and plants promptly. Rotate crops and avoid excessive nitrogen use.</string>
+    <string name="potato_disease2">Early Blight (Alternaria solani): A fungal disease that causes dark brown spots on leaves, affecting the plant’s ability to photosynthesize.</string>
+    <string name="potato_disease2_prevention">To prevent early blight, apply fungicides like chlorothalonil and practice crop rotation. Ensure that plants are not overcrowded to allow for proper airflow and avoid over-irrigating.</string>
+
+    <!-- Crop 9: Cucumber -->
+    <string name="cucumber_name">Cucumber</string>
+    <string name="cucumber_climate">Cucumbers thrive in warm temperatures between 20°C and 30°C and require a lot of sunlight. They need moderate rainfall (600–800 mm per year) or regular irrigation.</string>
+    <string name="cucumber_soil">Cucumbers grow best in loamy, well-drained soils with a pH between 6.0 and 7.0. The soil should be rich in organic matter and have good moisture retention properties.</string>
+    <string name="cucumber_disease1">Powdery Mildew (Sphaerotheca fuliginea): A fungal disease causing a white, powdery coating on leaves and stems.</string>
+    <string name="cucumber_disease1_prevention">Apply sulfur-based fungicides or neem oil, remove infected leaves, and ensure proper spacing to promote air circulation around plants. Avoid wetting foliage during watering.</string>
+    <string name="cucumber_disease2">Downy Mildew (Pseudoperonospora cubensis): A fungal disease that causes yellow spots on leaves and eventually leads to plant death.</string>
+    <string name="cucumber_disease2_prevention">To prevent downy mildew, use resistant varieties, apply fungicides such as mancozeb or metalaxyl, and practice crop rotation. Keep the garden free of infected plant material.</string>
+
+    <!-- Crop 10: Lettuce -->
+    <string name="lettuce_name">Lettuce</string>
+    <string name="lettuce_climate">Lettuce grows best in cool temperate climates with temperatures ranging from 10°C to 20°C. It requires moderate rainfall (500–800 mm) or regular irrigation.</string>
+    <string name="lettuce_soil">Lettuce prefers well-drained, fertile sandy loam or clay loam soils with a pH range of 6.0 to 7.0. The soil should be rich in organic matter and capable of retaining moisture.</string>
+    <string name="lettuce_disease1">Downy Mildew (Bremia lactucae): A fungal disease that causes yellowing of leaves and mold growth on the underside of leaves.</string>
+    <string name="lettuce_disease1_prevention">To prevent downy mildew, apply fungicides such as metalaxyl, remove infected leaves, and avoid overcrowding. Ensure proper spacing and good air circulation.</string>
+    <string name="lettuce_disease2">Leaf Spot (Cercospora spp.): A fungal disease that causes dark, circular lesions on leaves, reducing their quality.</string>
+    <string name="lettuce_disease2_prevention">Apply fungicides like chlorothalonil or copper sulfate, and practice crop rotation. Remove diseased leaves and avoid over-watering or wetting the leaves during irrigation.</string>
+
+    <!-- Crop 11: Tomato -->
+    <string name="tomato_name">Tomato</string>
+    <string name="tomato_climate">Tomatoes thrive in warm climates with temperatures ranging from 20°C to 30°C. They require full sun and moderate rainfall (600–800 mm per year).</string>
+    <string name="tomato_soil">Tomatoes grow best in well-drained, fertile loamy soils with a pH between 6.0 and 6.8. Soil should be rich in organic matter to promote healthy growth.</string>
+    <string name="tomato_disease1">Late Blight (Phytophthora infestans): A fungal disease that causes dark, water-soaked lesions on leaves and stems.</string>
+    <string name="tomato_disease1_prevention">Apply copper-based fungicides and practice good crop rotation. Remove infected leaves promptly and avoid wetting foliage when watering. Provide adequate spacing for good airflow.</string>
+    <string name="tomato_disease2">Tomato Mosaic Virus (TMV): A viral disease that causes mosaic-like patterns on leaves, stunting plant growth.</string>
+    <string name="tomato_disease2_prevention">Use resistant tomato varieties, avoid handling plants when wet, and disinfect tools regularly. Remove infected plants from the garden and prevent aphids and other insect vectors.</string>
+
+    <!-- Crop 12: Carrot -->
+    <string name="carrot_name">Carrot</string>
+    <string name="carrot_climate">Carrots grow best in cooler climates with temperatures between 15°C and 20°C. They require moderate rainfall (400–600 mm per year) or irrigation.</string>
+    <string name="carrot_soil">Carrots thrive in well-drained, loose sandy loam or loamy soils with a pH of 6.0 to 7.0. The soil should be free from stones and clods to allow proper root formation.</string>
+    <string name="carrot_disease1">Alternaria Leaf Blight (Alternaria dauci): A fungal disease causing dark lesions on leaves, leading to reduced photosynthesis and yield.</string>
+    <string name="carrot_disease1_prevention">Apply fungicides such as mancozeb or chlorothalonil, remove infected leaves, and practice crop rotation. Ensure adequate soil drainage and avoid overcrowding.</string>
+    <string name="carrot_disease2">Root-Knot Nematodes (Meloidogyne spp.): Nematodes that cause root swelling and deformities, reducing root quality.</string>
+    <string name="carrot_disease2_prevention">Use resistant carrot varieties, apply nematicides if necessary, and practice crop rotation with non-host plants to reduce nematode populations in the soil.</string>
+
+    <!-- Crop 13: Sugarcane -->
+    <string name="sugarcane_name">Sugarcane</string>
+    <string name="sugarcane_climate">Sugarcane thrives in tropical climates with temperatures between 25°C and 35°C. It requires high humidity and abundant rainfall (1500–2500 mm per year), though it can tolerate drought conditions when well-established.</string>
+    <string name="sugarcane_soil">Sugarcane grows best in deep, fertile loamy soils with good drainage and a pH between 6.0 and 7.5. The soil should be rich in organic matter and have good water-holding capacity.</string>
+    <string name="sugarcane_disease1">Red Rot (Colletotrichum falcatum): A fungal disease causing a reddish-brown discoloration in the stalks, which can lead to reduced sugar content.</string>
+    <string name="sugarcane_disease1_prevention">Use resistant sugarcane varieties, practice crop rotation, and remove infected plants. Apply fungicides and ensure proper irrigation to prevent water stress.</string>
+    <string name="sugarcane_disease2">Smut (Ustilago scitaminea): A fungal disease that causes deformed shoots and decreases yield.</string>
+    <string name="sugarcane_disease2_prevention">Use disease-free planting material, apply fungicides, and remove infected plants. Practice crop rotation and maintain good field hygiene to reduce the spread of the disease.</string>
+
+    <!-- Crop 14: Spinach -->
+    <string name="spinach_name">Spinach</string>
+    <string name="spinach_climate">Spinach grows best in cool climates with temperatures ranging from 10°C to 20°C. It requires moderate rainfall (500–700 mm) or irrigation throughout the growing season.</string>
+    <string name="spinach_soil">Spinach thrives in fertile, well-drained loamy soils with a pH of 6.0 to 7.5. The soil should be rich in organic matter, which helps retain moisture and nutrients.</string>
+    <string name="spinach_disease1">Downy Mildew (Peronospora farinosa): A fungal disease that causes yellowing of leaves and the appearance of fuzzy growth on the undersides of leaves.</string>
+    <string name="spinach_disease1_prevention">Use resistant varieties, apply fungicides like copper sulfate, and remove infected plants. Ensure proper air circulation and avoid excessive moisture on leaves.</string>
+    <string name="spinach_disease2">Powdery Mildew (Erysiphe cichoracearum): A fungal disease that appears as a white, powdery growth on leaves, reducing photosynthesis and yield.</string>
+    <string name="spinach_disease2_prevention">To prevent powdery mildew, apply sulfur-based fungicides, remove infected plant material, and space plants to allow good airflow. Avoid overhead irrigation.</string>
+
+    <!-- Crop 15: Pea -->
+    <string name="pea_name">Pea</string>
+    <string name="pea_climate">Peas thrive in cool, temperate climates with temperatures between 10°C and 20°C. They require moderate rainfall (500–700 mm) or irrigation during the growing season.</string>
+    <string name="pea_soil">Peas grow best in well-drained, fertile loamy soils with a pH between 6.0 and 7.5. The soil should have good moisture retention while being well-aerated.</string>
+    <string name="pea_disease1">Powdery Mildew (Erysiphe pisi): A fungal disease causing white, powdery growth on leaves, stems, and pods, reducing plant vigor and yield.</string>
+    <string name="pea_disease1_prevention">Apply sulfur-based fungicides, remove infected plant parts, and ensure proper spacing between plants for good airflow. Avoid high humidity and wet conditions.</string>
+    <string name="pea_disease2">Root Rot (Aphanomyces euteiches): A fungal disease that causes wilting, yellowing, and decay of roots.</string>
+    <string name="pea_disease2_prevention">Use resistant pea varieties, avoid over-watering, and ensure well-drained soil. Practice crop rotation and remove infected plant material to prevent the spread of the fungus.</string>
+
+    <!-- Crop 16: Onion -->
+    <string name="onion_name">Onion</string>
+    <string name="onion_climate">Onions thrive in temperate climates with temperatures between 13°C and 24°C. They require moderate rainfall (500–800 mm) and benefit from long daylight hours.</string>
+    <string name="onion_soil">Onions grow best in well-drained, loose sandy loam soils with a pH between 6.0 and 7.0. The soil should be rich in organic matter and allow for good root development.</string>
+    <string name="onion_disease1">Downy Mildew (Peronospora destructor): A fungal disease that causes yellowing of leaves and stunted growth, reducing bulb quality.</string>
+    <string name="onion_disease1_prevention">Use resistant varieties, apply fungicides such as copper-based products, and practice crop rotation. Remove infected plant material from the field to reduce disease spread.</string>
+    <string name="onion_disease2">White Rot (Sclerotium cepivorum): A fungal disease that causes rot at the base of the onion bulb and produces white, fluffy mycelium.</string>
+    <string name="onion_disease2_prevention">Practice crop rotation with non-allium crops, use disease-free planting material, and apply fungicides like thiophanate-methyl. Ensure proper drainage to avoid excess moisture around the bulbs.</string>
+
+    <!-- Crop 17: Garlic -->
+    <string name="garlic_name">Garlic</string>
+    <string name="garlic_climate">Garlic grows best in temperate climates with temperatures between 12°C and 20°C. It requires moderate rainfall (500–700 mm) or regular irrigation.</string>
+    <string name="garlic_soil">Garlic prefers well-drained, loose, loamy soils with a pH range of 6.0 to 7.5. The soil should be rich in organic matter and well-aerated to allow proper root development.</string>
+    <string name="garlic_disease1">Rust (Puccinia allii): A fungal disease that causes orange or red pustules on leaves, leading to yellowing and premature death of leaves.</string>
+    <string name="garlic_disease1_prevention">Use resistant garlic varieties, apply fungicides such as mancozeb, and practice crop rotation. Remove infected plant material and avoid planting garlic in the same area for consecutive years.</string>
+    <string name="garlic_disease2">White Rot (Sclerotium cepivorum): A fungal disease that affects garlic bulbs, causing decay and white fungal growth at the base of the plant.</string>
+    <string name="garlic_disease2_prevention">Rotate crops with non-allium crops, avoid over-watering, and use disease-free seed garlic. Apply appropriate fungicides and remove infected bulbs from the field immediately.</string>
+
+    <!-- Crop 18: Eggplant -->
+    <string name="eggplant_name">Eggplant</string>
+    <string name="eggplant_climate">Eggplant thrives in warm climates with temperatures between 20°C and 30°C. It requires full sun and moderate rainfall (600–900 mm) throughout the growing season.</string>
+    <string name="eggplant_soil">Eggplant prefers well-drained, fertile loamy soils with a pH range of 5.5 to 6.8. The soil should be rich in organic matter and have good drainage to prevent root rot.</string>
+    <string name="eggplant_disease1">Fusarium Wilt (Fusarium oxysporum): A soil-borne fungal disease that causes yellowing of leaves, wilting, and eventually plant death.</string>
+    <string name="eggplant_disease1_prevention">Use resistant eggplant varieties, practice crop rotation, and avoid excessive watering. Remove infected plants and apply appropriate fungicides like thiophanate-methyl.</string>
+    <string name="eggplant_disease2">Aphid-Transmitted Viruses (Tomato mosaic virus, etc.): Aphids can spread various viral diseases that cause leaf deformation, stunted growth, and reduced yields.</string>
+    <string name="eggplant_disease2_prevention">Control aphids with insecticides such as neem oil or insecticidal soap, and practice good field hygiene. Use virus-free seeds and remove infected plants from the field immediately.</string>
+
+    <!-- Crop 19: Bell Pepper -->
+    <string name="bell_pepper_name">Bell Pepper</string>
+    <string name="bell_pepper_climate">Bell peppers grow best in warm climates with temperatures between 20°C and 30°C. They require moderate rainfall (500–800 mm) and plenty of sunlight.</string>
+    <string name="bell_pepper_soil">Bell peppers prefer well-drained, fertile loamy soils with a pH between 6.0 and 6.8. The soil should be rich in organic matter and well-aerated to promote healthy root growth.</string>
+    <string name="bell_pepper_disease1">Blossom End Rot (Calcium Deficiency): A physiological disorder that causes dark, sunken spots at the blossom end of the fruit.</string>
+    <string name="bell_pepper_disease1_prevention">Ensure consistent watering and avoid irregular watering. Apply calcium nitrate fertilizer to maintain proper calcium levels in the soil.</string>
+    <string name="bell_pepper_disease2">Bacterial Spot (Xanthomonas vesicatoria): A bacterial disease that causes water-soaked lesions on leaves and fruit, leading to plant defoliation and yield reduction.</string>
+    <string name="bell_pepper_disease2_prevention">Use resistant varieties, apply copper-based bactericides, and practice crop rotation. Remove infected plant material and avoid overhead irrigation to minimize spread.</string>
+
+    <!-- Crop 20: Cabbage -->
+    <string name="cabbage_name">Cabbage</string>
+    <string name="cabbage_climate">Cabbage grows best in cool climates with temperatures between 15°C and 20°C. It requires moderate rainfall (500–800 mm) or irrigation throughout the growing season.</string>
+    <string name="cabbage_soil">Cabbage prefers well-drained, fertile soils rich in organic matter, with a pH range of 6.0 to 7.5. The soil should be loose to allow for good root development.</string>
+    <string name="cabbage_disease1">Clubroot (Plasmodiophora brassicae): A soil-borne fungal disease that causes swollen, distorted roots, leading to stunted growth and reduced yield.</string>
+    <string name="cabbage_disease1_prevention">Practice crop rotation with non-brassica crops, apply lime to raise soil pH, and remove infected plants. Use resistant cabbage varieties when available.</string>
+    <string name="cabbage_disease2">Aphid Infestation (Various species): Aphids can transmit viral diseases, weaken plants, and cause stunted growth.</string>
+    <string name="cabbage_disease2_prevention">Control aphids using insecticidal soap or neem oil, and practice good field hygiene. Avoid planting cabbage in fields where aphids have previously been a problem.</string>
+
+    <!-- Crop 21: Broccoli -->
+    <string name="broccoli_name">Broccoli</string>
+    <string name="broccoli_climate">Broccoli grows best in cool climates with temperatures between 15°C and 20°C. It requires moderate rainfall (500–800 mm) or irrigation throughout the growing season.</string>
+    <string name="broccoli_soil">Broccoli prefers fertile, well-drained loamy soils with a pH range of 6.0 to 7.5. The soil should have high organic matter content to promote healthy growth.</string>
+    <string name="broccoli_disease1">Downy Mildew (Peronospora brassicae): A fungal disease that causes yellowing of leaves and stunted growth.</string>
+    <string name="broccoli_disease1_prevention">Apply copper-based fungicides, ensure proper air circulation, and remove infected plants. Avoid overcrowding and irrigating overhead.</string>
+    <string name="broccoli_disease2">Cabbage Worm (Pieris rapae): A pest that feeds on broccoli leaves, leading to reduced yield and quality.</string>
+    <string name="broccoli_disease2_prevention">Use insecticidal soap or neem oil to control cabbage worms, and practice crop rotation. Cover plants with row covers to prevent insect infestation.</string>
+
+    <!-- Crop 22: Cauliflower -->
+    <string name="cauliflower_name">Cauliflower</string>
+    <string name="cauliflower_climate">Cauliflower thrives in cool climates with temperatures between 15°C and 20°C. It requires regular rainfall or irrigation (500–800 mm) during the growing season.</string>
+    <string name="cauliflower_soil">Cauliflower prefers well-drained, fertile, loamy soils with a pH range of 6.0 to 7.5. The soil should be rich in organic matter to support healthy growth and yield.</string>
+    <string name="cauliflower_disease1">Black Rot (Xanthomonas campestris): A bacterial disease that causes yellowing and wilting of leaves, often starting from the margins.</string>
+    <string name="cauliflower_disease1_prevention">Use disease-resistant varieties, apply copper-based bactericides, and practice crop rotation. Avoid overhead irrigation and remove infected plants to reduce bacterial spread.</string>
+    <string name="cauliflower_disease2">Downy Mildew (Peronospora parasitica): A fungal disease that results in yellow patches on leaves and stunted growth.</string>
+    <string name="cauliflower_disease2_prevention">Apply fungicides like copper sulfate, ensure proper spacing for good airflow, and remove infected plant material. Avoid wetting the leaves during irrigation.</string>
+
+    <!-- Crop 24: Zucchini -->
+    <string name="zucchini_name">Zucchini</string>
+    <string name="zucchini_climate">Zucchini grows best in warm climates with temperatures between 20°C and 30°C. It needs plenty of sunlight and moderate rainfall (500–700 mm) throughout the growing season.</string>
+    <string name="zucchini_soil">Zucchini thrives in well-drained, fertile, loamy soils with a pH of 6.0 to 7.5. The soil should have good moisture retention without becoming waterlogged.</string>
+    <string name="zucchini_disease1">Powdery Mildew (Podosphaera xanthii): A fungal disease characterized by white, powdery spots on leaves, reducing photosynthesis and yield.</string>
+    <string name="zucchini_disease1_prevention">Apply sulfur-based fungicides, remove infected leaves, and space plants properly for good airflow. Avoid wetting foliage and practice crop rotation to prevent fungal buildup.</string>
+    <string name="zucchini_disease2">Squash Bug (Anasa tristis): A pest that feeds on plant sap, causing wilting, yellowing, and early fruit drop.</string>
+    <string name="zucchini_disease2_prevention">Control squash bugs with insecticides like neem oil or pyrethrins, and manually remove them. Practice good field hygiene and use row covers to protect plants.</string>
+
+    <!-- Crop 25: Pumpkin -->
+    <string name="pumpkin_name">Pumpkin</string>
+    <string name="pumpkin_climate">Pumpkins grow best in warm climates with temperatures between 18°C and 25°C. They require full sunlight and moderate rainfall (600–800 mm) throughout the growing season.</string>
+    <string name="pumpkin_soil">Pumpkins prefer well-drained, loamy soils with a pH range of 6.0 to 6.8. The soil should be rich in organic matter and have good moisture retention for optimal growth.</string>
+    <string name="pumpkin_disease1">Powdery Mildew (Podosphaera xanthii): A fungal disease causing white, powdery growth on leaves and stems, which reduces photosynthesis.</string>
+    <string name="pumpkin_disease1_prevention">Use sulfur-based fungicides, provide proper spacing between plants for airflow, and avoid watering overhead. Remove infected leaves immediately.</string>
+    <string name="pumpkin_disease2">Cucumber Beetle (Acalymma vittatum): A pest that feeds on pumpkin vines and leaves, leading to damage and disease transmission.</string>
+    <string name="pumpkin_disease2_prevention">Control cucumber beetles with insecticides or natural predators like ladybugs, and use row covers to protect the plants from pests.</string>
+
+    <!-- Crop 26: Sweet Corn -->
+    <string name="sweet_corn_name">Sweet Corn</string>
+    <string name="sweet_corn_climate">Sweet corn grows best in warm climates with temperatures between 18°C and 30°C. It requires full sunlight and moderate rainfall (500–700 mm) or irrigation throughout the growing season.</string>
+    <string name="sweet_corn_soil">Sweet corn prefers well-drained, fertile, loamy soils with a pH range of 5.8 to 7.0. The soil should be rich in organic matter and have good water retention without being soggy.</string>
+    <string name="sweet_corn_disease1">Corn Smut (Ustilago maydis): A fungal disease that forms swollen, grayish kernels on ears, reducing yield quality.</string>
+    <string name="sweet_corn_disease1_prevention">Practice crop rotation, remove infected ears, and avoid overhead irrigation to reduce the spread of the disease. Use fungicides as necessary.</string>
+    <string name="sweet_corn_disease2">Northern Corn Leaf Blight (Exserohilum turcicum): A fungal disease causing long, grayish lesions on leaves, leading to reduced photosynthesis.</string>
+    <string name="sweet_corn_disease2_prevention">Use resistant corn varieties, apply fungicides like chlorothalonil, and practice crop rotation to reduce disease pressure.</string>
+
+    <!-- Crop 27: Watermelon -->
+    <string name="watermelon_name">Watermelon</string>
+    <string name="watermelon_climate">Watermelon thrives in warm climates with temperatures between 22°C and 30°C. It requires full sun and moderate rainfall (500–800 mm) for healthy growth.</string>
+    <string name="watermelon_soil">Watermelon prefers well-drained, sandy loam soils with a pH range of 6.0 to 6.8. The soil should be loose to allow for large root development and proper drainage.</string>
+    <string name="watermelon_disease1">Powdery Mildew (Podosphaera xanthii): A fungal disease that causes white, powdery patches on leaves, affecting plant growth and fruit development.</string>
+    <string name="watermelon_disease1_prevention">Use sulfur-based fungicides, space plants to improve airflow, and avoid excessive moisture on the leaves. Remove infected leaves and practice crop rotation.</string>
+    <string name="watermelon_disease2">Cucumber Beetle (Acalymma vittatum): A pest that feeds on watermelon plants, transmitting diseases and causing leaf damage.</string>
+    <string name="watermelon_disease2_prevention">Use row covers, apply insecticides like neem oil, and practice good field hygiene to control cucumber beetles.</string>
+
+    <!-- Crop 28: Soybean -->
+    <string name="soybean_name">Soybean</string>
+    <string name="soybean_climate">Soybeans thrive in warm climates with temperatures between 20°C and 30°C. They require full sunlight and moderate rainfall (500–700 mm) during the growing season.</string>
+    <string name="soybean_soil">Soybeans grow best in well-drained, fertile loamy soils with a pH range of 6.0 to 6.8. The soil should have good water retention without becoming waterlogged.</string>
+    <string name="soybean_disease1">Rust (Phakopsora pachyrhizi): A fungal disease that causes reddish-brown lesions on leaves, reducing photosynthesis and yield.</string>
+    <string name="soybean_disease1_prevention">Use resistant soybean varieties, apply fungicides such as triazoles, and practice crop rotation to reduce disease incidence.</string>
+    <string name="soybean_disease2">Soybean Aphid (Aphis glycines): A pest that feeds on plant sap, causing stunted growth and reduced yield.</string>
+    <string name="soybean_disease2_prevention">Control aphids with insecticides like pyrethrins or neem oil, and use natural predators like ladybugs to manage aphid populations.</string>
+
+    <!-- Crop 30: Chickpea -->
+    <string name="chickpea_name">Chickpea</string>
+    <string name="chickpea_climate">Chickpeas grow best in warm climates with temperatures between 18°C and 30°C. They require full sunlight and moderate rainfall (400–600 mm) for optimal growth.</string>
+    <string name="chickpea_soil">Chickpeas thrive in well-drained, sandy loam soils with a pH range of 6.0 to 7.5. The soil should be fertile, with good water retention and aeration.</string>
+    <string name="chickpea_disease1">Ascochyta Blight (Ascochyta rabiei): A fungal disease that causes lesions on leaves and stems, leading to defoliation and yield loss.</string>
+    <string name="chickpea_disease1_prevention">Use resistant chickpea varieties, apply fungicides like tebuconazole, and practice crop rotation. Remove infected plant material immediately to reduce disease spread.</string>
+    <string name="chickpea_disease2">Root Rot (Fusarium spp.): A fungal disease that causes wilting and decay of roots, leading to stunted growth and plant death.</string>
+    <string name="chickpea_disease2_prevention">Ensure good drainage, practice crop rotation, and use resistant varieties. Avoid excessive irrigation and remove infected plants to reduce disease spread.</string>
+
+    <!-- Crop 31: Apple -->
+    <string name="apple_name">Apple</string>
+    <string name="apple_climate">Apples thrive in temperate climates with temperatures ranging from 18°C to 24°C. They require cold winters for dormancy and moderate rainfall (600–800 mm) during the growing season.</string>
+    <string name="apple_soil">Apples prefer well-drained, loamy soils with a pH range of 6.0 to 7.0. The soil should be fertile with good organic matter content.</string>
+    <string name="apple_disease1">Apple Scab (Venturia inaequalis): A fungal disease causing lesions on leaves and fruit, leading to reduced yield and fruit quality.</string>
+    <string name="apple_disease1_prevention">Use resistant varieties, apply fungicides during wet weather, and practice proper pruning for good airflow. Remove fallen leaves and fruit to prevent spores from spreading.</string>
+    <string name="apple_disease2">Powdery Mildew (Podosphaera leucotricha): A fungal disease that affects young shoots, leaves, and flowers, causing white powdery growth.</string>
+    <string name="apple_disease2_prevention">Apply sulfur-based fungicides and practice proper spacing between trees for improved airflow. Remove affected parts promptly and avoid overhead irrigation.</string>
+
+    <!-- Crop 32: Blueberry -->
+    <string name="blueberry_name">Blueberry</string>
+    <string name="blueberry_climate">Blueberries thrive in cool climates, typically between 16°C to 22°C. They require acidic soil and prefer a moderate amount of rainfall (500–700 mm) during the growing season.</string>
+    <string name="blueberry_soil">Blueberries grow best in well-drained, acidic soils with a pH range of 4.5 to 5.5. The soil should be rich in organic matter and moist but not waterlogged.</string>
+    <string name="blueberry_disease1">Botrytis Blight (Botrytis cinerea): A fungal disease that causes gray mold on berries, flowers, and leaves.</string>
+    <string name="blueberry_disease1_prevention">Use fungicides like thiophanate-methyl, practice good spacing between plants for airflow, and remove infected plant parts. Avoid overhead watering.</string>
+    <string name="blueberry_disease2">Mummy Berry (Monilinia vaccinii-corymbosi): A fungal disease that causes premature berry drop and shriveled fruit.</string>
+    <string name="blueberry_disease2_prevention">Remove infected fruit and debris from the ground, apply fungicides during bloom, and avoid overhead irrigation to prevent the spread of spores.</string>
+
+    <!-- Crop 33: Cherry -->
+    <string name="cherry_name">Cherry</string>
+    <string name="cherry_climate">Cherries grow best in temperate climates with temperatures ranging from 18°C to 24°C. They require cold winters for dormancy and moderate rainfall (500–700 mm).</string>
+    <string name="cherry_soil">Cherries prefer well-drained, loamy soils with a pH range of 6.0 to 7.5. The soil should be fertile and well-aerated to promote healthy root growth.</string>
+    <string name="cherry_disease1">Cherry Leaf Spot (Blumeriella jaapii): A fungal disease causing purple or reddish spots on leaves, leading to premature defoliation.</string>
+    <string name="cherry_disease1_prevention">Apply fungicides like chlorothalonil, prune trees for good airflow, and remove infected leaves. Practice crop rotation to reduce pathogen buildup.</string>
+    <string name="cherry_disease2">Brown Rot (Monilinia laxa): A fungal disease that causes fruit rot, leading to soft, mushy cherries.</string>
+    <string name="cherry_disease2_prevention">Remove infected fruit, apply fungicides, and practice proper sanitation. Prune trees to improve air circulation around the fruit.</string>
+
+    <!-- Crop 34: Corn -->
+    <string name="corn_name">Corn</string>
+    <string name="corn_climate">Corn grows best in warm climates with temperatures between 18°C and 30°C. It requires full sunlight and moderate rainfall (500–700 mm) throughout the growing season.</string>
+    <string name="corn_soil">Corn prefers well-drained, fertile, loamy soils with a pH range of 5.8 to 7.0. The soil should be rich in organic matter to support robust growth.</string>
+    <string name="corn_disease1">Corn Smut (Ustilago maydis): A fungal disease that forms swollen, grayish kernels on ears, reducing yield quality.</string>
+    <string name="corn_disease1_prevention">Practice crop rotation, remove infected ears, and avoid overhead irrigation to reduce the spread of the disease. Use fungicides as necessary.</string>
+    <string name="corn_disease2">Northern Corn Leaf Blight (Exserohilum turcicum): A fungal disease causing grayish lesions on leaves, leading to reduced photosynthesis.</string>
+    <string name="corn_disease2_prevention">Use resistant corn varieties, apply fungicides like chlorothalonil, and practice crop rotation to reduce disease pressure.</string>
+
+    <!-- Crop 35: Grape -->
+    <string name="grape_name">Grape</string>
+    <string name="grape_climate">Grapes grow best in temperate climates with temperatures between 15°C and 30°C. They require a dry growing season and full sunlight to produce high-quality fruit.</string>
+    <string name="grape_soil">Grapes prefer well-drained, sandy loam or clay loam soils with a pH range of 5.5 to 7.0. The soil should have good organic matter content and moisture retention.</string>
+    <string name="grape_disease1">Powdery Mildew (Erysiphe necator): A fungal disease that causes white, powdery growth on leaves, stems, and fruit.</string>
+    <string name="grape_disease1_prevention">Apply sulfur-based fungicides, practice proper spacing between vines for airflow, and avoid wetting the foliage. Remove infected leaves and fruit promptly.</string>
+    <string name="grape_disease2">Downy Mildew (Plasmopara viticola): A fungal disease causing yellowish lesions on leaves and fruit rot.</string>
+    <string name="grape_disease2_prevention">Apply copper-based fungicides, practice proper vineyard management, and remove infected plant material. Use drip irrigation to avoid wetting the leaves.</string>
+
+    <!-- Crop 36: Orange -->
+    <string name="orange_name">Orange</string>
+    <string name="orange_climate">Oranges grow best in subtropical to tropical climates, with temperatures ranging from 25°C to 35°C. They require full sunlight and moderate rainfall (500–800 mm) during the growing season.</string>
+    <string name="orange_soil">Oranges prefer well-drained, loamy soils with a pH range of 6.0 to 7.5. The soil should be rich in organic matter and have good water retention.</string>
+    <string name="orange_disease1">Citrus Canker (Xanthomonas axonopodis): A bacterial disease that causes lesions on leaves, stems, and fruit, leading to fruit drop.</string>
+    <string name="orange_disease1_prevention">Use resistant varieties, apply copper-based bactericides, and remove infected plant material. Avoid overhead irrigation and improve airflow around trees.</string>
+    <string name="orange_disease2">Greening (Huanglongbing): A bacterial disease that causes yellowing of leaves, stunted growth, and misshapen fruit.</string>
+    <string name="orange_disease2_prevention">Remove infected trees, use insecticides to control vector insects, and practice good orchard sanitation to prevent the spread of the disease.</string>
+
+    <!-- Crop 37: Peach -->
+    <string name="peach_name">Peach</string>
+    <string name="peach_climate">Peaches grow best in temperate climates with temperatures between 18°C and 24°C. They require a cold winter for dormancy and moderate rainfall (500–700 mm) during the growing season.</string>
+    <string name="peach_soil">Peaches prefer well-drained, fertile, loamy soils with a pH range of 6.0 to 7.0. The soil should be rich in organic matter and well-aerated for healthy root development.</string>
+    <string name="peach_disease1">Peach Leaf Curl (Taphrina deformans): A fungal disease that causes distorted and curled leaves.</string>
+    <string name="peach_disease1_prevention">Apply fungicides like copper sulfate, prune trees to improve airflow, and remove infected leaves to reduce fungal spread.</string>
+    <string name="peach_disease2">Brown Rot (Monilinia fructicola): A fungal disease that causes soft, rotten fruit and affects flowers.</string>
+    <string name="peach_disease2_prevention">Remove infected fruit, apply fungicides during bloom, and ensure proper orchard sanitation. Prune trees for better air circulation.</string>
+
+    <!-- Crop 38: Raspberry -->
+    <string name="raspberry_name">Raspberry</string>
+    <string name="raspberry_climate">Raspberries thrive in temperate climates with temperatures between 18°C and 24°C. They require moderate rainfall (500–700 mm) during the growing season.</string>
+    <string name="raspberry_soil">Raspberries prefer well-drained, loamy soils with a pH range of 5.6 to 6.5. The soil should be fertile and rich in organic matter.</string>
+    <string name="raspberry_disease1">Gray Mold (Botrytis cinerea): A fungal disease that causes gray mold to form on berries, leading to fruit rot.</string>
+    <string name="raspberry_disease1_prevention">Apply fungicides, remove infected fruit and debris, and avoid overhead watering to prevent the spread of the disease.</string>
+    <string name="raspberry_disease2">Raspberry Rust (Puccinia rubi): A fungal disease that causes yellowish spots on leaves and reduces plant vigor.</string>
+    <string name="raspberry_disease2_prevention">Prune and dispose of infected canes, apply fungicides, and maintain good plant spacing to improve airflow and reduce humidity around plants.</string>
+
+    <!-- Crop 39: Squash -->
+    <string name="squash_name">Squash</string>
+    <string name="squash_climate">Squash thrives in warm climates with temperatures between 20°C and 30°C. They require full sunlight and consistent rainfall (500–700 mm) or irrigation during the growing season.</string>
+    <string name="squash_soil">Squash prefers well-drained, loamy soils with a pH range of 6.0 to 6.8. The soil should be rich in organic matter and able to retain moisture without becoming waterlogged.</string>
+    <string name="squash_disease1">Powdery Mildew (Podosphaera xanthii): A fungal disease that causes white, powdery growth on leaves, stems, and fruit.</string>
+    <string name="squash_disease1_prevention">Use fungicides like sulfur or potassium bicarbonate, practice proper spacing between plants, and avoid overhead irrigation. Remove infected plant material promptly.</string>
+    <string name="squash_disease2">Downy Mildew (Pseudoperonospora cubensis): A fungal disease causing yellowish spots on leaves, leading to premature leaf drop.</string>
+    <string name="squash_disease2_prevention">Apply copper-based fungicides, maintain proper spacing for good air circulation, and practice crop rotation to reduce pathogen buildup.</string>
+
+    <!-- Crop 40: Strawberry -->
+    <string name="strawberry_name">Strawberry</string>
+    <string name="strawberry_climate">Strawberries grow best in temperate climates with temperatures ranging from 15°C to 25°C. They require consistent rainfall (500–700 mm) or irrigation throughout the growing season.</string>
+    <string name="strawberry_soil">Strawberries prefer well-drained, sandy loam soils with a pH range of 5.5 to 6.5. The soil should be rich in organic matter and have good moisture retention without becoming waterlogged.</string>
+    <string name="strawberry_disease1">Gray Mold (Botrytis cinerea): A fungal disease that causes grayish mold on fruit, leading to fruit rot and reduced shelf life.</string>
+    <string name="strawberry_disease1_prevention">Apply fungicides like captan or thiophanate-methyl, remove infected fruit and leaves, and avoid overhead irrigation to reduce humidity around plants.</string>
+    <string name="strawberry_disease2">Powdery Mildew (Sphaerotheca macularis): A fungal disease that causes white, powdery spots on leaves, petioles, and fruit, stunting plant growth.</string>
+    <string name="strawberry_disease2_prevention">Apply sulfur-based fungicides, practice good crop rotation, and ensure proper spacing between plants to reduce moisture accumulation.</string>
+
 </resources>

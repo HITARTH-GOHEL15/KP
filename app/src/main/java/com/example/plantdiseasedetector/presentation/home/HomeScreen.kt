@@ -2,10 +2,6 @@ package com.example.plantdiseasedetector.presentation.home
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.AnimatedContentTransitionScope
-import androidx.compose.animation.core.EaseIn
-import androidx.compose.animation.core.EaseOut
-import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
@@ -56,10 +52,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.plantdiseasedetector.R
 import com.example.plantdiseasedetector.navigation.Screens
-import com.example.plantdiseasedetector.presentation.Knowledge.KnowledgeScreen
+import com.example.plantdiseasedetector.presentation.knowledge.KnowledgeScreen
 import com.example.plantdiseasedetector.presentation.Profile.ProfileScreen
-import com.example.plantdiseasedetector.presentation.chat_Hub.AskScreen
+import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.ImageDiagnosisScreen
+import com.example.plantdiseasedetector.presentation.vehicle.VehicleScreen
 import com.example.plantdiseasedetector.ui.theme.quicksand_bold
 import com.example.plantdiseasedetector.ui.theme.quicksand_light
 import com.example.plantdiseasedetector.ui.theme.quicksand_medium
@@ -108,25 +105,6 @@ fun HomeScreen(
                 )
             }
         },
-            floatingActionButton = {
-                if(isHomeScreen) {
-                    FloatingActionButton(
-                        onClick = {
-                            navController.navigate(Screens.AiAssistantScreenRoute.route)
-                        },
-                        shape = MaterialTheme.shapes.medium,
-                        containerColor = MaterialTheme.colorScheme.primary,
-                        modifier = Modifier
-                            .size(70.dp)
-                    ) {
-                        Icon(
-                            painter = painterResource(R.drawable.chat_bubble_24dp_e8eaed_fill0_wght400_grad0_opsz24),
-                            contentDescription = "ai_chat",
-                            tint = MaterialTheme.colorScheme.onBackground
-                        )
-                    }
-                }
-                                   },
         bottomBar = {
             NavigationBar(
                 containerColor = MaterialTheme.colorScheme.secondary
@@ -149,7 +127,7 @@ fun HomeScreen(
                             text = stringResource(R.string.diagnose_crop),
                             fontFamily = quicksand_light,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 12.sp
+                            fontSize = 10.sp
                         )
                     },
                     selected = bottomNavigationScreen == BottomNavigationScreens.ImaageDiagnosisScreenView
@@ -172,7 +150,7 @@ fun HomeScreen(
                             text = stringResource(R.string.chat_Hab),
                             fontFamily = quicksand_light,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 12.sp
+                            fontSize = 8.sp
                         )
                     },
                     selected = bottomNavigationScreen == BottomNavigationScreens.AskScreenView
@@ -195,10 +173,33 @@ fun HomeScreen(
                             text = stringResource(R.string.knowledge_Hub),
                             fontFamily = quicksand_light,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 10.sp
+                            fontSize = 8.sp
                         )
                     },
                     selected = bottomNavigationScreen == BottomNavigationScreens.KnowledgeView
+                )
+                NavigationBarItem(
+                    colors = NavigationBarItemDefaults.colors(
+                        indicatorColor = MaterialTheme.colorScheme.primary
+                    ),
+                    onClick = {
+                        bottomNavigationScreen = BottomNavigationScreens.VehicleView
+                    },
+                    icon = {
+                        Icon(
+                            painter = painterResource(R.drawable.school_24dp_e8eaed_fill0_wght400_grad0_opsz24),
+                            contentDescription = null
+                        )
+                    },
+                    label = {
+                        Text(
+                            text = "Vehicle Hub",
+                            fontFamily = quicksand_light,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 10.sp
+                        )
+                    },
+                    selected = bottomNavigationScreen == BottomNavigationScreens.VehicleView
                 )
                 NavigationBarItem(
                     colors = NavigationBarItemDefaults.colors(
@@ -218,7 +219,7 @@ fun HomeScreen(
                             text = stringResource(R.string.You),
                             fontFamily = quicksand_light,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 12.sp
+                            fontSize = 10.sp
                         )
                     },
                     selected = bottomNavigationScreen == BottomNavigationScreens.ProfileScreenView,
@@ -235,6 +236,7 @@ fun HomeScreen(
                    BottomNavigationScreens.AskScreenView -> slideInHorizontally(){it}.togetherWith(slideOutHorizontally(){-it})
                    BottomNavigationScreens.KnowledgeView -> slideInHorizontally(){it}.togetherWith(slideOutHorizontally(){-it})
                    BottomNavigationScreens.ProfileScreenView -> slideInHorizontally(){it}.togetherWith(slideOutHorizontally(){-it})
+                   BottomNavigationScreens.VehicleView -> slideInHorizontally(){it}.togetherWith(slideOutHorizontally(){-it})
                }
            },
            modifier = Modifier
@@ -270,6 +272,10 @@ fun HomeScreen(
                        modifier = Modifier,
                        username = "user_name"
                    )
+               }
+
+               BottomNavigationScreens.VehicleView -> {
+                   VehicleScreen()
                }
            }
        }
@@ -556,13 +562,11 @@ fun RatingRow() {
 }
 
 
-
-
-
 private enum class BottomNavigationScreens{
     ImaageDiagnosisScreenView,
     AskScreenView,
     KnowledgeView,
+    VehicleView,
     ProfileScreenView
 }
 
