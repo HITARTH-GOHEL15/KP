@@ -57,15 +57,8 @@ import com.example.plantdiseasedetector.ui.theme.quicksand_medium
 @Composable
 fun SignUpScreen(
     navController: NavController,
-    viewModel: SignUpViewModel,
     context: MainActivity
 ) {
-    var name by remember { mutableStateOf("") }
-    var phone by remember { mutableStateOf("") }
-    var isVerificationSent by remember { mutableStateOf("") }
-    var errorMessage  by remember { mutableStateOf("") }
-
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -120,40 +113,18 @@ fun SignUpScreen(
                     )
                 }
                 SignUpInfo(
-                    name = name,
-                    phone = phone,
-                    onNameChange = {name = it},
-                    onPhoneChange = {phone = it},
+                    name = "",
+                    phone = "",
+                    onNameChange = {},
+                    onPhoneChange = {},
                     onSignInClick = {
                         onSignUpIsFinished(context = context)
                         navController.popBackStack()
                         navController.navigate(Screens.SignInScreenRoute.route)
                     },
                     onSendVerificationbuttonClick = {
-                        if (name.isNotEmpty() && phone.isNotEmpty()) {
-                          viewModel.signUp(name  , phone) { success , message ->
-                              if(success) {
-                                  isVerificationSent = true.toString()
-                                  onSignUpIsFinished(context = context)
-                                  navController.popBackStack()
-                                  navController.navigate(Screens.VerificationCodeScreenRoute.route)
-                              } else {
-                                  errorMessage = message
-                              }
-                          }
-                        } else {
-                            errorMessage = "please enter valid details!"
-                        }
                     }
                 )
-
-                if(errorMessage.isNotEmpty()) {
-                    Text(
-                        text = errorMessage,
-                        color = Color.Red,
-                        modifier = Modifier.padding(top = 8.dp)
-                    )
-                }
             }
         }
     }

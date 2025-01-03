@@ -7,7 +7,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
@@ -16,16 +15,10 @@ import com.example.plantdiseasedetector.MainActivity
 import com.example.plantdiseasedetector.R
 import com.example.plantdiseasedetector.data.DataSourceClimateInfo
 import com.example.plantdiseasedetector.data.DataSourcelanguage
-import com.example.plantdiseasedetector.data.network.UserRepository
 import com.example.plantdiseasedetector.presentation.Profile.ProfileScreen
 import com.example.plantdiseasedetector.presentation.authentication.SignInScreen
 import com.example.plantdiseasedetector.presentation.authentication.SignUpScreen
-import com.example.plantdiseasedetector.presentation.authentication.SignUpViewModel
 import com.example.plantdiseasedetector.presentation.authentication.VerificationCodeScreen
-import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskListBoxEditScreen
-import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskListBoxScreen
-import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskQuestionListItemScreen
-import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskScreen
 import com.example.plantdiseasedetector.presentation.home.HomeScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.AiAssistantScreen
 import com.example.plantdiseasedetector.presentation.imageDiagnosis.DiagnosisReportScreen
@@ -39,11 +32,14 @@ import com.example.plantdiseasedetector.presentation.knowledge.ReadingListScreen
 import com.example.plantdiseasedetector.presentation.onBoarding.LanguageselectionScreen
 import com.example.plantdiseasedetector.presentation.onBoarding.OnboardingScreen
 import com.example.plantdiseasedetector.presentation.splash.SplashScreen
+import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskListBoxEditScreen
+import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskListBoxScreen
+import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskQuestionListItemScreen
+import com.example.plantdiseasedetector.presentation.suggestion_Hub.AskScreen
 
 @Composable
 fun Nav(
     context: MainActivity,
-    signUpViewModel: SignUpViewModel
 ) {
     val navController = rememberNavController()
     NavHost(
@@ -151,8 +147,7 @@ fun Nav(
                 ) {
                 SignUpScreen(
                     navController = navController,
-                    context = context,
-                    viewModel = signUpViewModel
+                    context = context
                 )
             }
             composable(
