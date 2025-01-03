@@ -57,6 +57,7 @@ import com.example.plantdiseasedetector.ui.theme.quicksand_medium
 @Composable
 fun SignUpScreen(
     navController: NavController,
+    viewModel: SignUpViewModel,
     context: MainActivity
 ) {
     Scaffold(
